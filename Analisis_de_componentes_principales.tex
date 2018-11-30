@@ -1,0 +1,416 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[usenames,dvipsnames,9pt]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color, colortbl}
+\usepackage{flafter}
+\usepackage{enumerate}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsthm,latexsym,array}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{rotating}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{subfigure}
+
+
+\usefonttheme[onlymath]{serif}
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+%
+\def\e#1{{\rm e}^{#1}}
+\def\exp#1{{\rm exp}{#1}}
+\def\frac#1#2{{{#1}\over{#2}}}
+\def\binom#1#2{{{#1}\choose{#2}}}
+\def\spot{$\bullet$\hspace{0.1cm}}
+\def\le{\left}
+\def\ri{\right}
+\def\pro{\propto}
+\def\prop{\propto}
+%
+\DeclareMathOperator*{\tr}{tr}
+\DeclareMathOperator*{\logit}{logit}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%
+\newcommand\iid{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily iid}}}{\sim}}}
+\newcommand\simiid{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily iid}}}{\sim}}}
+\newcommand\simind{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily ind}}}{\sim}}}
+\newcommand\eqd{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily d}}}{=}}}
+\newcommand{\ind}[1]{\mathbb{I}\left\{ #1 \right\}}
+\newcommand{\pr}[1]{\mathbb{P}\text{r}\left[#1\right]}
+\newcommand{\expec}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\expe}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\var}[1]{\mathbb{V}\text{ar}\left[#1\right]}
+\newcommand{\sd}[1]{\text{SD}\left[#1\right]}
+\newcommand{\cov}[1]{\mathbb{C}\text{ov}\left[#1\right]}
+\newcommand{\coefvar}[1]{\text{CV}\left[#1\right]}
+\newcommand{\diag}[1]{\text{diag}\left[#1\right]}
+\newcommand{\expo}[1]{\exp{ \left\{ #1 \right\}}}
+\newcommand{\ex}[1]{\exp{ \left\{ #1 \right\}}}
+\newcommand{\quo}[1]{\textquotedblleft#1\textquotedblright}
+\newcommand{\comi}[1]{\textquotedblleft#1\textquotedblright}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\ra}{\sqrt}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\TP}{\text{TP}}
+\newcommand{\TN}{\text{TN}}
+\newcommand{\FP}{\text{FP}}
+\newcommand{\FN}{\text{FN}}
+%
+\def\A{\mathbf{A}}\def\a{\mathbf{a}}\def\Av{\boldsymbol{A}}\def\av{\boldsymbol{a}}
+\def\B{\mathbf{B}}\def\b{\mathbf{b}}\def\Bv{\boldsymbol{B}}\def\bv{\boldsymbol{b}}
+\def\C{\mathbf{C}}\def\c{\mathbf{c}}\def\Cv{\boldsymbol{C}}\def\cv{\boldsymbol{c}}
+\def\D{\mathbf{D}}\def\d{\mathbf{d}}\def\Dv{\boldsymbol{D}}\def\dv{\boldsymbol{d}}
+\def\E{\mathbf{E}}\def\e{\mathbf{e}}\def\Ev{\boldsymbol{E}}\def\ev{\boldsymbol{e}}
+\def\F{\mathbf{F}}\def\f{\mathbf{f}}\def\Fv{\boldsymbol{F}}\def\fv{\boldsymbol{f}}
+\def\G{\mathbf{G}}\def\g{\mathbf{g}}\def\Gv{\boldsymbol{G}}\def\gv{\boldsymbol{g}}
+\def\H{\mathbf{H}}\def\h{\mathbf{h}}\def\Hv{\boldsymbol{H}}\def\hv{\boldsymbol{h}}
+\def\I{\mathbf{I}}\def\i{\mathbf{i}}\def\Iv{\boldsymbol{I}}\def\iv{\boldsymbol{i}}
+\def\J{\mathbf{J}}\def\j{\mathbf{j}}\def\Jv{\boldsymbol{J}}\def\jv{\boldsymbol{j}}
+\def\K{\mathbf{K}}\def\k{\mathbf{k}}\def\Kv{\boldsymbol{K}}\def\kv{\boldsymbol{k}}
+\def\L{\mathbf{L}}\def\l{\mathbf{l}}\def\Lv{\boldsymbol{L}}\def\lv{\boldsymbol{l}}
+\def\M{\mathbf{M}}\def\m{\mathbf{m}}\def\Mv{\boldsymbol{M}}\def\mv{\boldsymbol{m}}
+\def\N{\mathbf{N}}\def\n{\mathbf{n}}\def\Nv{\boldsymbol{N}}\def\nv{\boldsymbol{n}}
+\def\O{\mathbf{O}}\def\o{\mathbf{o}}\def\Ov{\boldsymbol{O}}\def\ov{\boldsymbol{o}}
+\def\P{\mathbf{P}}\def\p{\mathbf{p}}\def\Pv{\boldsymbol{P}}\def\pv{\boldsymbol{p}}
+\def\Q{\mathbf{Q}}\def\q{\mathbf{q}}\def\Qv{\boldsymbol{Q}}\def\qv{\boldsymbol{q}}
+\def\R{\mathbf{R}}\def\r{\mathbf{r}}\def\Rv{\boldsymbol{R}}\def\rv{\boldsymbol{r}}
+\def\S{\mathbf{S}}\def\s{\mathbf{s}}\def\Sv{\boldsymbol{S}}\def\sv{\boldsymbol{s}}
+\def\T{\mathbf{T}}\def\t{\mathbf{t}}\def\Tv{\boldsymbol{T}}\def\tv{\boldsymbol{t}}
+\def\U{\mathbf{U}}\def\u{\mathbf{u}}\def\Uv{\boldsymbol{U}}\def\uv{\boldsymbol{u}}
+\def\V{\mathbf{V}}\def\v{\mathbf{v}}\def\Vv{\boldsymbol{V}}\def\vv{\boldsymbol{v}}
+\def\W{\mathbf{W}}\def\w{\mathbf{w}}\def\Wv{\boldsymbol{W}}\def\wv{\boldsymbol{w}}
+\def\X{\mathbf{X}}\def\x{\mathbf{x}}\def\Xv{\boldsymbol{X}}\def\xv{\boldsymbol{x}}
+\def\Y{\mathbf{Y}}\def\y{\mathbf{y}}\def\Yv{\boldsymbol{Y}}\def\yv{\boldsymbol{y}}
+\def\Z{\mathbf{Z}}\def\z{\mathbf{z}}\def\Zv{\boldsymbol{Z}}\def\zv{\boldsymbol{z}}
+%
+\def\al{\alpha}\def\alv{\boldsymbol{\alpha}}
+\def\be{\beta}\def\bev{\boldsymbol{\beta}}
+\def\ga{\gamma}\def\gav{\boldsymbol{\gamma}}
+\def\de{\delta}\def\dev{\boldsymbol{\delta}}
+\def\del{\delta}\def\delv{\boldsymbol{\delta}}
+\def\eps{\epsilon}\def\epsv{\boldsymbol{\epsilon}}
+\def\veps{\varepsilon}\def\vepsv{\boldsymbol{\varepsilon}}
+\def\ze{\zeta}\def\zev{\boldsymbol{\zeta}}
+\def\te{\theta}\def\tev{\boldsymbol{\theta}}
+\def\vte{\vartheta}\def\vtev{\boldsymbol{\vartheta}}
+\def\io{\iota}\def\iov{\boldsymbol{\iota}}
+\def\ka{\kappa}\def\kav{\boldsymbol{\kappa}}
+\def\la{\lambda}\def\lav{\boldsymbol{\lambda}}
+\def\lam{\lambda}\def\lamv{\boldsymbol{\lambda}}
+\def\vrho{\varrho}\def\vrhov{\boldsymbol{\varrho}}
+\def\si{\sigma}\def\siv{\boldsymbol{\sigma}}
+\def\sig{\sigma}\def\sigv{\boldsymbol{\sigma}}
+\def\vsi{\varsigma}\def\vsiv{\boldsymbol{\varsigma}}
+\def\ups{\upsilon}\def\upsv{\boldsymbol{\upsilon}}
+\def\vphi{\varphi}\def\vphiv{\boldsymbol{\varphi}}
+\def\om{\omega}\def\omv{\boldsymbol{\omega}}\def\omev{\boldsymbol{\omega}}
+\def\ome{\omega}
+\def\etav{\boldsymbol{\eta}}
+\def\xiv{\boldsymbol{\xi}}
+\def\piv{\boldsymbol{\pi}}
+\def\psiv{\boldsymbol{\psi}}
+\def\phiv{\boldsymbol{\phi}}
+\def\muv{\boldsymbol{\mu}}
+%
+\def\Ga{\Gamma}\def\GA{\mathbf{\Gamma}}
+\def\Gam{\Gamma}\def\GAM{\mathbf{\Gamma}}
+\def\De{\Delta}\def\DE{\mathbf{\Delta}}
+\def\Del{\Delta}\def\DEL{\mathbf{\Delta}}
+\def\Te{\Theta}\def\TE{\mathbf{\Theta}}
+\def\La{\Lambda}\def\LA{\mathbf{\Lambda}}
+\def\Lam{\Lambda}\def\LAM{\mathbf{\Lambda}}
+\def\XI{\mathbf{\Xi}}
+\def\PI{\mathbf{\Pi}}
+\def\Si{\Sigma}\def\SI{\mathbf{\Sigma}}
+\def\Sig{\Sigma}\def\SIG{\mathbf{\Sigma}}
+\def\Ups{\Upsilon}\def\UPS{\mathbf{\Upsilon}}
+\def\PHI{\mathbf{\Phi}}
+\def\PSI{\mathbf{\Psi}}
+\def\Om{\Omega}\def\OM{\mathbf{\Omega}}
+\def\Ome{\Omega}\def\OME{\mathbf{\Omega}}
+%
+\def\teh{\hat{\theta}}\def\tevh{\hat{\boldsymbol{\theta}}}
+\def\Unif{\small{\mathsf{Unif}}}
+\def\MN{\small{\mathsf{Mult}}}
+\def\Cat{\small{\mathsf{Cat}}}
+\def\Dir{\small{\mathsf{Dir}}}
+\def\DP{\small{\mathsf{DP}}}
+\def\Ber{\small{\mathsf{Ber}}}
+\def\Bin{\small{\mathsf{Bin}}}
+\def\BetaBin{\small{\mathsf{BetaBin}}}
+\def\NegBin{\small{\mathsf{NegBin}}}
+\def\Nor{\small{\mathsf{N}}}
+\def\normal{\small{\mathsf{N}}}
+\def\Bet{\small{\mathsf{Beta}}}
+\def\bet{\small{\mathsf{Beta}}}
+\def\Gamd{\small{\mathsf{Gam}}}
+\def\IGamd{\small{\mathsf{IGam}}}
+\def\IG{\small{\mathsf{IGam}}}
+\def\hyphen{\text{\textendash}}
+%
+\def\data{\text{data}}
+\def\rest{\text{rest}}
+\def\mle{\text{mle}}
+\def\bayes{\text{bayes}}
+\def\rest{\text{rest}}
+\def\DIC{\text{DIC}}
+%
+\def\zerov{\boldsymbol{0}}
+\def\onev{\boldsymbol{1}}
+\def\onen{\boldsymbol{1}_n}
+%
+\def\reals{\mathbb{R}}
+%
+\newtheorem{theo}{Theorem}
+%
+\definecolor{violet}{rgb}{0.56, 0.0, 1.0}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{Gray}{gray}{0.9}
+
+%%% ----------------------------------------------------------------------
+% FIGURES ----------------------------------------------------------------
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%\graphicspath{{C:/PROJECT/presentation/figs/}}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+%TITLE PAGE
+\title[]{Análisis de Componentes Principales} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{ }
+%\newline \textbf{JASA}, Vol. 91, No. 433 (Mar., \textbf{1996}), pp. 142--153}
+
+\author[Juan Sosa]{\LARGE{Juan Sosa, PhD}} % Your name
+\institute[Universidad Externado] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+%University of California, Santa Cruz \\ % Your institution for the title page
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=.15]{logo-UE.pdf}
+%\end{figure}
+}
+\date{I - 2018} % Date, can be changed to a custom date
+
+%\logo{\includegraphics[height=1.4cm]{Grateful_Slug.png}}
+
+
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+
+
+\begin{document}
+
+\begin{frame}
+
+\titlepage % Print the title page as the first slide
+
+\end{frame}
+
+
+%OVERVIEW
+%\begin{frame}
+%\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+%\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%\end{frame}
+
+
+%\section{ }
+
+
+\begin{frame}{Análisis de Componentes Principales (ACP)}
+
+\begin{block}{Objetivo}
+\begin{itemize}
+  \item Reducir la dimensionalidad de la data reteniendo tanta de la variabilidad original como sea posible.
+  \vspace{3pt}
+  \item Generar un nuevo conjunto de variables no correlacionadas (componentes principales) que retengan la mayor cantidad de variabilidad de la data original.
+\end{itemize}
+\end{block}
+
+\begin{block}{Observaciones}
+\begin{itemize}
+  \item Útil cuando las variables están correlacionadas.
+  \item Técnica de carácter exploratorio/descriptivo, mas NO probabilístico!
+  \item La distribución probabilística de $\Xv=[X_1,X_2,\ldots,X_p]^T$ no es de interés.
+  \item Input para otro método (e.g., análisis de regresión).
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Método}
+
+\begin{block}{Formulación}
+\begin{align*}
+Y_1 &= a_{11}X_1 + a_{12}X_2 + \ldots + a_{1p}X_p = \av^T_1\Xv\\
+Y_2 &= a_{21}X_1 + a_{22}X_2 + \ldots + a_{2p}X_p = \av^T_2\Xv\\
+\vdots \\
+Y_p &= a_{p1}X_1 + a_{p2}X_2 + \ldots + a_{pp}X_p = \av^T_p\Xv
+\end{align*}
+\end{block}
+
+\begin{block}{Coeficientes (cargas/pesos)}
+\centering
+$a_{jk}$: contribución/aporte de la variable $X_k$ en la componente $Y_j$.
+\end{block}
+
+\begin{itemize}
+  \item Las cargas son escogidas de tal manera que las componentes tengan la \textbf{mayor variabilidad posible} (en orden decreciente) y además sean \textbf{mutuamente incorrelacionadas}.
+  \item Para que la variabilidad de las componentes no sea arbitrariamente grande se impone la \textbf{restricción} $\|\av_j\| = 1$.
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Computo}
+
+\begin{block}{}
+Para \textbf{maximizar} una función de varias variables con \textbf{restricciones} se utiliza el método de los \textbf{multiplicadores de Lagrange}:
+\begin{itemize}
+  \item $\var{Y_j} = \lambda_j$ i.e., $j$-ésimo \textbf{valor propio} de $\S$,
+  \item $\av_j = \ev_j$, i.e., $j$-ésimo \textbf{vector propio} de $\S$,
+\end{itemize}
+donde $\lambda_1 \geq \lambda_2 \geq \ldots \geq \lambda_p$\quad y\quad $\ev_j \cdot \ev_k = 0$.
+\end{block}
+
+\begin{block}{}
+\centering
+$\S\,\ev_j = \lambda_j\,\ev_j$
+\end{block}
+
+\begin{block}{Observaciones}
+\begin{itemize}
+  \item La media de los datos no influye en el proceso (centrar la data).
+  \item $\lambda_1 + \lambda_2 + \ldots + \lambda_p = s^2_1 + s^2_2 + \ldots + s^2_p$.
+  \item La interpretación de las componentes $Y_j$ no es directa.
+  \item El ACP no es invariante a la escala de medición.
+  \item Las variables $X_j$ con mayores varianzas tienden a dominar.
+  \item La estructura de las componentes depende de la escala de medición.
+  \item Usar $\R$ cuando hay problemas de conmensurabilidad.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{En la práctica}
+
+\begin{block}{Cuántas componentes son necesarias?}
+\begin{itemize}
+  \item Graficar $\lambda_j$ frente a $j$ (\textit{scree diagram}) y excluir aquellas componentes que no provoquen un cambio drástico en la curva.
+  \item Escoger las primeras componentes que acumulen entre 70\% y 90\% de la variabilidad.
+  \item Excluir la componente $Y_j$ si $\lambda_j<\bar{\lambda}$.
+  \item Usando $\R$, excluir la componente $Y_j$ si $\lambda_j < 0.7$.
+\end{itemize}
+\end{block}
+
+\begin{block}{Puntajes (\textit{scores})}
+$$\mathbb{Y} = \mathbb{X} \A$$
+donde $\A = [\av_1|\av_2|\cdots|\av_m]$ y $m$ es el número de componentes seleccionadas.
+\end{block}
+
+\begin{block}{\textit{Biplot} (Gabriel, 1981; Gower y Hand, 1986)}
+\begin{itemize}
+  \item Representación bidimensional gráfica de individuos y variables.
+  \item La longitud del vector representa la varianza.
+  \item El ángulo entre los vectores representa la correlación.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\end{document} 
