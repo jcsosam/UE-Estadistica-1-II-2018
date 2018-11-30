@@ -1,0 +1,499 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[usenames,dvipsnames,9pt]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color, colortbl}
+\usepackage{flafter}
+\usepackage{enumerate}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsthm,latexsym,array}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{rotating}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{subfigure}
+
+
+\usefonttheme[onlymath]{serif}
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+%
+\def\e#1{{\rm e}^{#1}}
+\def\exp#1{{\rm exp}{#1}}
+\def\frac#1#2{{{#1}\over{#2}}}
+\def\binom#1#2{{{#1}\choose{#2}}}
+\def\spot{$\bullet$\hspace{0.1cm}}
+\def\le{\left}
+\def\ri{\right}
+\def\pro{\propto}
+\def\prop{\propto}
+%
+\DeclareMathOperator*{\tr}{tr}
+\DeclareMathOperator*{\logit}{logit}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%
+\newcommand\iid{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily iid}}}{\sim}}}
+\newcommand\simiid{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily iid}}}{\sim}}}
+\newcommand\simind{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily ind}}}{\sim}}}
+\newcommand\eqd{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily d}}}{=}}}
+\newcommand{\ind}[1]{\mathbb{I}\left\{ #1 \right\}}
+\newcommand{\pr}[1]{\mathbb{P}\text{r}\left[#1\right]}
+\newcommand{\expec}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\expe}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\var}[1]{\mathbb{V}\text{ar}\left[#1\right]}
+\newcommand{\sd}[1]{\text{SD}\left[#1\right]}
+\newcommand{\cov}[1]{\mathbb{C}\text{ov}\left[#1\right]}
+\newcommand{\coefvar}[1]{\text{CV}\left[#1\right]}
+\newcommand{\diag}[1]{\text{diag}\left[#1\right]}
+\newcommand{\expo}[1]{\exp{ \left\{ #1 \right\}}}
+\newcommand{\ex}[1]{\exp{ \left\{ #1 \right\}}}
+\newcommand{\quo}[1]{\textquotedblleft#1\textquotedblright}
+\newcommand{\comi}[1]{\textquotedblleft#1\textquotedblright}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\ra}{\sqrt}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\TP}{\text{TP}}
+\newcommand{\TN}{\text{TN}}
+\newcommand{\FP}{\text{FP}}
+\newcommand{\FN}{\text{FN}}
+%
+\def\A{\mathbf{A}}\def\a{\mathbf{a}}\def\Av{\boldsymbol{A}}\def\av{\boldsymbol{a}}
+\def\B{\mathbf{B}}\def\b{\mathbf{b}}\def\Bv{\boldsymbol{B}}\def\bv{\boldsymbol{b}}
+\def\C{\mathbf{C}}\def\c{\mathbf{c}}\def\Cv{\boldsymbol{C}}\def\cv{\boldsymbol{c}}
+\def\D{\mathbf{D}}\def\d{\mathbf{d}}\def\Dv{\boldsymbol{D}}\def\dv{\boldsymbol{d}}
+\def\E{\mathbf{E}}\def\e{\mathbf{e}}\def\Ev{\boldsymbol{E}}\def\ev{\boldsymbol{e}}
+\def\F{\mathbf{F}}\def\f{\mathbf{f}}\def\Fv{\boldsymbol{F}}\def\fv{\boldsymbol{f}}
+\def\G{\mathbf{G}}\def\g{\mathbf{g}}\def\Gv{\boldsymbol{G}}\def\gv{\boldsymbol{g}}
+\def\H{\mathbf{H}}\def\h{\mathbf{h}}\def\Hv{\boldsymbol{H}}\def\hv{\boldsymbol{h}}
+\def\I{\mathbf{I}}\def\i{\mathbf{i}}\def\Iv{\boldsymbol{I}}\def\iv{\boldsymbol{i}}
+\def\J{\mathbf{J}}\def\j{\mathbf{j}}\def\Jv{\boldsymbol{J}}\def\jv{\boldsymbol{j}}
+\def\K{\mathbf{K}}\def\k{\mathbf{k}}\def\Kv{\boldsymbol{K}}\def\kv{\boldsymbol{k}}
+\def\L{\mathbf{L}}\def\l{\mathbf{l}}\def\Lv{\boldsymbol{L}}\def\lv{\boldsymbol{l}}
+\def\M{\mathbf{M}}\def\m{\mathbf{m}}\def\Mv{\boldsymbol{M}}\def\mv{\boldsymbol{m}}
+\def\N{\mathbf{N}}\def\n{\mathbf{n}}\def\Nv{\boldsymbol{N}}\def\nv{\boldsymbol{n}}
+\def\O{\mathbf{O}}\def\o{\mathbf{o}}\def\Ov{\boldsymbol{O}}\def\ov{\boldsymbol{o}}
+\def\P{\mathbf{P}}\def\p{\mathbf{p}}\def\Pv{\boldsymbol{P}}\def\pv{\boldsymbol{p}}
+\def\Q{\mathbf{Q}}\def\q{\mathbf{q}}\def\Qv{\boldsymbol{Q}}\def\qv{\boldsymbol{q}}
+\def\R{\mathbf{R}}\def\r{\mathbf{r}}\def\Rv{\boldsymbol{R}}\def\rv{\boldsymbol{r}}
+\def\S{\mathbf{S}}\def\s{\mathbf{s}}\def\Sv{\boldsymbol{S}}\def\sv{\boldsymbol{s}}
+\def\T{\mathbf{T}}\def\t{\mathbf{t}}\def\Tv{\boldsymbol{T}}\def\tv{\boldsymbol{t}}
+\def\U{\mathbf{U}}\def\u{\mathbf{u}}\def\Uv{\boldsymbol{U}}\def\uv{\boldsymbol{u}}
+\def\V{\mathbf{V}}\def\v{\mathbf{v}}\def\Vv{\boldsymbol{V}}\def\vv{\boldsymbol{v}}
+\def\W{\mathbf{W}}\def\w{\mathbf{w}}\def\Wv{\boldsymbol{W}}\def\wv{\boldsymbol{w}}
+\def\X{\mathbf{X}}\def\x{\mathbf{x}}\def\Xv{\boldsymbol{X}}\def\xv{\boldsymbol{x}}
+\def\Y{\mathbf{Y}}\def\y{\mathbf{y}}\def\Yv{\boldsymbol{Y}}\def\yv{\boldsymbol{y}}
+\def\Z{\mathbf{Z}}\def\z{\mathbf{z}}\def\Zv{\boldsymbol{Z}}\def\zv{\boldsymbol{z}}
+%
+\def\al{\alpha}\def\alv{\boldsymbol{\alpha}}
+\def\be{\beta}\def\bev{\boldsymbol{\beta}}
+\def\ga{\gamma}\def\gav{\boldsymbol{\gamma}}
+\def\de{\delta}\def\dev{\boldsymbol{\delta}}
+\def\del{\delta}\def\delv{\boldsymbol{\delta}}
+\def\eps{\epsilon}\def\epsv{\boldsymbol{\epsilon}}
+\def\veps{\varepsilon}\def\vepsv{\boldsymbol{\varepsilon}}
+\def\ze{\zeta}\def\zev{\boldsymbol{\zeta}}
+\def\te{\theta}\def\tev{\boldsymbol{\theta}}
+\def\vte{\vartheta}\def\vtev{\boldsymbol{\vartheta}}
+\def\io{\iota}\def\iov{\boldsymbol{\iota}}
+\def\ka{\kappa}\def\kav{\boldsymbol{\kappa}}
+\def\la{\lambda}\def\lav{\boldsymbol{\lambda}}
+\def\lam{\lambda}\def\lamv{\boldsymbol{\lambda}}
+\def\vrho{\varrho}\def\vrhov{\boldsymbol{\varrho}}
+\def\si{\sigma}\def\siv{\boldsymbol{\sigma}}
+\def\sig{\sigma}\def\sigv{\boldsymbol{\sigma}}
+\def\vsi{\varsigma}\def\vsiv{\boldsymbol{\varsigma}}
+\def\ups{\upsilon}\def\upsv{\boldsymbol{\upsilon}}
+\def\vphi{\varphi}\def\vphiv{\boldsymbol{\varphi}}
+\def\om{\omega}\def\omv{\boldsymbol{\omega}}\def\omev{\boldsymbol{\omega}}
+\def\ome{\omega}
+\def\etav{\boldsymbol{\eta}}
+\def\xiv{\boldsymbol{\xi}}
+\def\piv{\boldsymbol{\pi}}
+\def\psiv{\boldsymbol{\psi}}
+\def\phiv{\boldsymbol{\phi}}
+\def\muv{\boldsymbol{\mu}}
+\def\tev{\boldsymbol{\theta}}
+
+%
+\def\Ga{\Gamma}\def\GA{\mathbf{\Gamma}}
+\def\Gam{\Gamma}\def\GAM{\mathbf{\Gamma}}
+\def\De{\Delta}\def\DE{\mathbf{\Delta}}
+\def\Del{\Delta}\def\DEL{\mathbf{\Delta}}
+\def\Te{\Theta}\def\TE{\mathbf{\Theta}}
+\def\La{\Lambda}\def\LA{\mathbf{\Lambda}}
+\def\Lam{\Lambda}\def\LAM{\mathbf{\Lambda}}
+\def\XI{\mathbf{\Xi}}
+\def\PI{\mathbf{\Pi}}
+\def\Si{\Sigma}\def\SI{\mathbf{\Sigma}}
+\def\Sig{\Sigma}\def\SIG{\mathbf{\Sigma}}
+\def\Ups{\Upsilon}\def\UPS{\mathbf{\Upsilon}}
+\def\PHI{\mathbf{\Phi}}
+\def\PSI{\mathbf{\Psi}}
+\def\Om{\Omega}\def\OM{\mathbf{\Omega}}
+\def\Ome{\Omega}\def\OME{\mathbf{\Omega}}
+%
+\def\teh{\hat{\theta}}\def\tevh{\hat{\boldsymbol{\theta}}}
+\def\Unif{\small{\mathsf{Unif}}}
+\def\MN{\small{\mathsf{Mult}}}
+\def\Cat{\small{\mathsf{Cat}}}
+\def\Dir{\small{\mathsf{Dir}}}
+\def\DP{\small{\mathsf{DP}}}
+\def\Ber{\small{\mathsf{Ber}}}
+\def\Bin{\small{\mathsf{Bin}}}
+\def\BetaBin{\small{\mathsf{BetaBin}}}
+\def\NegBin{\small{\mathsf{NegBin}}}
+\def\Nor{\small{\mathsf{N}}}
+\def\normal{\small{\mathsf{N}}}
+\def\Bet{\small{\mathsf{Beta}}}
+\def\bet{\small{\mathsf{Beta}}}
+\def\Gamd{\small{\mathsf{Gam}}}
+\def\IGamd{\small{\mathsf{IGam}}}
+\def\IG{\small{\mathsf{IGam}}}
+\def\hyphen{\text{\textendash}}
+%
+\def\data{\text{data}}
+\def\rest{\text{rest}}
+\def\mle{\text{mle}}
+\def\bayes{\text{bayes}}
+\def\rest{\text{rest}}
+\def\DIC{\text{DIC}}
+%
+\def\zerov{\boldsymbol{0}}
+\def\onev{\boldsymbol{1}}
+\def\onen{\boldsymbol{1}_n}
+%
+\def\reals{\mathbb{R}}
+%
+\newtheorem{theo}{Theorem}
+%
+\definecolor{violet}{rgb}{0.56, 0.0, 1.0}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{Gray}{gray}{0.9}
+
+%%% ----------------------------------------------------------------------
+% FIGURES ----------------------------------------------------------------
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%\graphicspath{{C:/PROJECT/presentation/figs/}}
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+%TITLE PAGE
+\title[]{Análisis de Clasificación} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{ }
+%\newline \textbf{JASA}, Vol. 91, No. 433 (Mar., \textbf{1996}), pp. 142--153}
+
+\author[Juan Sosa]{\LARGE{Juan Sosa, PhD}} % Your name
+\institute[Universidad Externado] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+%University of California, Santa Cruz \\ % Your institution for the title page
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.15]{./figs/logo-UE.pdf}
+\end{figure}
+}
+\date{I - 2018} % Date, can be changed to a custom date
+
+%\logo{\includegraphics[height=1.4cm]{Grateful_Slug.png}}
+
+
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+
+
+\begin{document}
+
+\begin{frame}
+
+\titlepage % Print the title page as the first slide
+
+\end{frame}
+
+
+%OVERVIEW
+%\begin{frame}
+%\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+%\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%\end{frame}
+
+
+%\section{ }
+
+
+\begin{frame}{Análisis de Clasificación (Clustering)}
+
+\begin{block}{Objetivo}
+\centering
+Identificar grupos (\textit{clusters}) de individuos que sean homogéneos dentro de los grupos y heterogéneos entre grupos.
+\end{block}
+
+\begin{block}{Observaciones}
+\begin{itemize}
+  \item Diferente del análisis discriminante!
+  \item Los grupos no están definidos a priori (o si incluso existen grupos).
+  \item Es necesario considerar una distancia.
+  \item Cuántos grupos?
+  \item Como asignar los individuos?
+\end{itemize}
+\end{block}
+
+\begin{block}{Métodos}
+\begin{itemize}
+  \item Clasificación jerárquica.
+  \item Agrupamiento de $K$-medias.
+  \item Agrupamiento basado en el modelo (estructura probabilística).
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Agrupamiento jerárquico}
+
+\begin{block}{Algoritmo}
+\begin{enumerate}
+  \item \textit{Start:} $C_1,C_2,\ldots,C_n$ (singletones), i.e., $K=n$.
+  \item Encontrar y unir el par de clusters más \textit{cercanos}, $C_i$ y $C_j$.
+  \item Decrecer el numero de clusters en 1, i.e., $K \leftarrow K - 1$.
+  \item \textit{Stop} si $K = 1$. De lo contrario, volver al paso 2.
+\end{enumerate}
+\end{block}
+
+
+\begin{block}{Distancias (similaridad) entre individuos}
+\begin{itemize}
+  \item $d_{ij} = \sqrt{\sum_\ell (x_{i,\ell} - x_{j,\ell})^2}$ :\quad\, Euclidiana.
+  \item $d_{ij} = \max_\ell |x_{i,\ell} - x_{j,\ell}|$ : \quad \,\,\,\,\,Norma máxima.
+  \item $d_{ij} = \sum_\ell |x_{i,\ell} - x_{j,\ell}|$ : \qquad\,\,\,\,Manhattan.
+  \item $d_{ij} = \left( \sum_\ell (x_{i,\ell} - x_{j,\ell})^p \right)^{1/p}$ : Minkowski.
+\end{itemize}
+\end{block}
+
+\begin{block}{Distancias entre clusters $A$ y $B$}
+\begin{itemize}
+  \item $d_{AB} = \min_{i\in A,j\in B} \{ d_{ij} \}$ : \quad\,\,\,\,\,\,\,\textit{single linkage clustering}.
+  \item $d_{AB} = \max_{i\in A,j\in B} \{ d_{ij} \}$ : \quad\,\,\,\,\,\,\textit{complete linkage clustering}.
+  \item $d_{AB} = \tfrac{1}{n_a\,n_B} \sum_{i\in A}\sum_{i\in B} d_{ij}$ :  \textit{group average clustering}.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Agrupamiento jerárquico (cont.)}
+
+\begin{block}{Cómo elegir $K$?}
+Examinar los tamaños de los cambios de altura en el dendrograma y tomar un
+\quo{gran} cambio para indicar el número apropiado de clusters para los datos.
+\end{block}
+
+\begin{block}{Cons: \textit{chaining}}
+Tendencia juntar puntos intermedios a un cluster ya establecido en lugar de inicializar un nuevo cluster.
+\end{block}
+
+\begin{block}{Observaciones}
+\begin{itemize}
+  \item Se debe ser cuidadoso al elegir las distancias (conmesurabilidad).
+  \item No tiene estructura probabilística.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Agrupamiento de $K$-medias}
+
+\begin{block}{Método}
+Encontrar la partición de $n$ individuos en $K$ grupos que minimicen el \textit{within-group sum of squares} (WGSS):
+$$
+\text{WGSS} = \sum_{j=1}^p \sum_{\ell=1}^K \sum_{i\in G_\ell} (x_{ij} - \bar{x}_j^{(\ell)})^2
+$$
+donde $\bar{x}_j^{(\ell)} = \sum_{i\in G_\ell} x_{ij}$ es la media en el grupo $G_\ell$ con la variable $j$.
+\end{block}
+
+\begin{block}{Algoritmo (Steinley, 2008)}
+\begin{itemize}
+  \item Partición inicial (agrupamiento jerárquico).
+  \item Calcular el cambio en el criterio de agrupamiento moviendo cada individuo de su propio cluster a otro cluster.
+  \item Ejecutar el cambio que conlleve al mayor cambio en el valor del criterio de agrupamiento.
+  \item Repetir pasos 2. y 3. hasta que el movimiento de ningún individuo cause una mejora.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Agrupamiento de $K$-medias (cont.)}
+
+\begin{block}{Propiedad}
+\vspace{-10pt}
+\begin{align*}
+\text{SC TOTAL} &= {\color{blue} \text{SC ENTRE}}\quad \,\qquad +\quad {\color{red} \text{SC DENTRO}}\\
+                &= {\color{blue} \text{SC EXPLICADA}}\quad +\quad {\color{red} \text{SC NO EXPLICADA}}
+\end{align*}
+\end{block}
+
+\begin{block}{}
+$$
+\text{Porcentaje de variabilidad explicado} = \frac{\text{SC EXPLICADA}}{\text{SC TOTAL}}
+$$
+\end{block}
+
+\begin{block}{Cómo elegir $K$?}
+Graficar el WGSS frente a $K$ y elegir aquel valor de $K$ donde el decrecimiento del WGSS no sea \quo{significativo}.
+\end{block}
+
+\begin{block}{Cons}
+\begin{itemize}
+  \item No es invariante a la escala de medición (conmensurabilidad).
+  \item Tiende a construir grupos con estructura \quo{esferica}.
+\end{itemize}
+\end{block}
+
+\begin{block}{Observaciones}
+\begin{itemize}
+  \item No tiene estructura probabilística.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Agrupamiento basado en el modelo}
+
+\begin{block}{Objetivo}
+Desarrollar un modelo estadístico que caracterice el mecanismo aleatorio que explique como se genera la data.
+\end{block}
+
+\begin{block}{Modelo}
+$$
+f(\xv;\piv,\boldsymbol{\theta}) = \sum_{j=1}^K \pi_j f_j(\xv,\boldsymbol{\theta}_j)
+$$
+donde $\sum_{j=1}^J \pi_j = 1$ (probabilidades de la mezcla).
+\end{block}
+
+\begin{block}{Objetivo}
+Crear los grupos a partir de las probabilidades a posteriori:
+$$
+\pr{\text{Grupo $k$}\mid \mathbb{X}} = \frac{\pi_k\,f(\xv\mid\muv_k,\SIG)}{\sum_{j=1}^K \pi_j\,f(\xv\mid\muv_j,\SIG)}
+$$
+\end{block}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Agrupamiento basado en el modelo (cont.)}
+
+\begin{block}{Diagnósticos}
+Establecer la estabilidad del agrupamiento:
+\begin{itemize}
+  \item Fuerza de predicción: Cross-Validation (OK si superior a 0.8 o 0.9).
+  \item Indice de Jaccard: Jittering o Bootstraping (OK si superior a 0.75).
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+
+
+
+\end{document} 
